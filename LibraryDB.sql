@@ -55,6 +55,7 @@ CREATE TABLE `borrowedbooks` (
   `book_id` int DEFAULT NULL,
   `borrow_date` date DEFAULT NULL,
   `return_date` date DEFAULT NULL,
+  `status` varchar(20) DEFAULT 'Borrowed',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `book_id` (`book_id`),
@@ -69,7 +70,7 @@ CREATE TABLE `borrowedbooks` (
 
 LOCK TABLES `borrowedbooks` WRITE;
 /*!40000 ALTER TABLE `borrowedbooks` DISABLE KEYS */;
-INSERT INTO `borrowedbooks` VALUES (1,1,2,'2025-12-01','2025-12-15'),(2,2,1,'2025-12-03',NULL);
+INSERT INTO `borrowedbooks` VALUES (1,1,2,'2025-12-01','2025-12-15','Borrowed'),(2,2,1,'2025-12-03',NULL,'Borrowed');
 /*!40000 ALTER TABLE `borrowedbooks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-07  1:46:02
+-- Dump completed on 2025-12-07 12:18:24
